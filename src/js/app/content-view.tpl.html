@@ -1,2 +1,8 @@
 <some-1></some-1>
-Content
+<form ng-submit="log()">
+    <label>Width: <input type="number" ng-model="model.width" min="100" max="600" step="1"></label>
+    <button type="submit">Set</button>
+  </form>
+<div *ngFor="name task of tasks; index as i; trackBy;">
+    
+</div>

@@ -1,4 +1,5 @@
-angular.module("app", ["templates"])
+angular
+  .module("app", ["templates"])
   .directive("app", () => {
     return {
       scope: {},
@@ -11,7 +12,11 @@ angular.module("app", ["templates"])
       scope: {},
       restrict: "E",
       templateUrl: "./js/app/content-view.tpl.html",
+      controller: ["$scope", "$element", log],
     };
+    function log($scope, $element) {
+      $scope.tasks = "mass";
+    }
   })
   .directive("sidebarView", () => {
     return {
@@ -70,4 +75,3 @@ angular.module("app", ["templates"])
       templateUrl: "./js/app/summary-view.tpl.html",
     };
   });
-
